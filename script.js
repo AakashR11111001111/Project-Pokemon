@@ -15,18 +15,10 @@ inputs.style.display = "none";
 
 
 async function getAllPokemon(){
-    for(let i = 1 ; i <= 200 ; i++){
+    for(let i = 1 ; i <= 160 ; i++){
         let fpoke = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`);
         let jPoke = await fpoke.json();
         allPoke.push(jPoke);
-        // GET NAMES -> console.log(jPoke.name);
-        // GET RANK -> console.log(jPoke.id);
-        // GET FRONT IMG -> console.log(jPoke.sprites.front_default);
-        // GET BACK IMG -> console.log(jPoke.sprites.back_default);
-        // GET FRONT PNG -> console.log(jPoke.sprites.front_shiny);
-        // GET BACK PNG -> console.log(jPoke.sprites.back_shiny);
-        // GET TYPES -> console.log(jPoke.types[0].type.name);
-        // GET ABILITIES -> console.log(jPoke.abilities[1])
     }
     setTimeout(()=>{
         loadingScr.style.display = "none";

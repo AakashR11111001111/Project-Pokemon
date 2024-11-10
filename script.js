@@ -15,7 +15,7 @@ inputs.style.display = "none";
 
 
 async function getAllPokemon(){
-    for(let i = 1 ; i <= 160 ; i++){
+    for(let i = 1 ; i <= 150 ; i++){
         let fpoke = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`);
         let jPoke = await fpoke.json();
         allPoke.push(jPoke);

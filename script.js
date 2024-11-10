@@ -87,7 +87,7 @@ function displayOnUI(arr){
         <img src = "${ele.sprites.back_default}" id = "poke-img"/>
         </div>
         <h5 class = "poke-name">${ele.name.toUpperCase()}</h5>
-        <h5 class="abs">Abilities: ${ele.abilities[0].ability.name}</h5>
+        <h5 class="abs">Abilities: ${ele.abilities[0].ability.name.toUpperCase()}</h5>
         </div>
         </div>
         `;

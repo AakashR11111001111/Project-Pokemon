@@ -338,13 +338,74 @@ select option::-webkit-scrollbar-thumb{
     align-items: center;
 }
 
+.detailed-card{
+    position: absolute;
+    left: 0;   
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    perspective: 1000px;
+    transform: translateZ(50px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.det-card{
+    font-family: "Poppins", serif;
+    height: fit-content;
+    width: 30%;
+    border-radius: 20px;
+    padding: 10px;
+    transition: transform 0.05s;
+    transform-style: preserve-3d;
+    transform: translateZ(50px);
+    display: flex;
+    scale: 0;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: popup 0.5s ease  forwards;
+}
+
+.det-card h4{
+    font-weight: 500;
+    font-size: 16px;
+    transform: translateZ(30px);
+}
+
+.det-card h1{
+    font-weight: 600;
+    letter-spacing: 2px;
+    transform: translateZ(30px);
+}
+
+.det-card img{
+    width: 70%;
+    transform: translateZ(30px);
+}
+
+.det-card svg{
+    transition: all 0.3s ease;
+    transform: translateZ(30px);
+}
+
+.det-card svg:hover{
+    cursor: pointer;
+    filter: drop-shadow( 0 0 10px red);
+}
+
+
 @keyframes loading {
     0%{
         opacity: 0;
     }
     50%{
         opacity: 1;
-        /* transform: translateY(20px); */
     }
 }
 
@@ -359,11 +420,35 @@ select option::-webkit-scrollbar-thumb{
         background-position: 0 100%;
     }
 }
-@media screen and (max-width:850px) {
+
+@keyframes popup {
+    from{
+        opacity: 0;
+        scale: 0;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+@media screen and (max-width:1000px){
+    .det-card{
+        width: 40%;
+    }
+}
+
+
+@media screen and (max-width:800px) {
     .Allinputs >*{
         width: 90%;
         border-radius: 1000px;
     }
+    .det-card{
+        width: 60%;
+    }
+
 }
 
 
@@ -371,6 +456,24 @@ select option::-webkit-scrollbar-thumb{
     .loading .dots{
         height: 10px;
         width: 10px;
+    }
+    
+    .det-card{
+        width: 70%;
+        
+    }
+
+    .det-card h1{
+        font-size: 20px;
+    }
+
+    .det-card img{
+        width: 50%;
+    }
+
+    .det-card p{
+        font-size: 12px;
+        text-align:center;
     }
 
     .dotdiv{
@@ -431,6 +534,11 @@ select option::-webkit-scrollbar-thumb{
 }
 
 @media screen and (max-width: 400px) {
+
+    .poke-container{
+        width: 95%;
+    }
+
     .poke-card{
         width: 100px;
         height: 150px;
